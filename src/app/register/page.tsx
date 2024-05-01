@@ -1,32 +1,37 @@
 "use client";
 
-import { Button, Form, Input, Typography } from "antd";
-//import { zodResolver } from "@hookform/resolvers/zod";
-import styles from "@/styles/register.module.css";
-import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { register } from "@/actions/register";
 import CForm from "@/components/form/CForm";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import CInput from "@/components/form/CInput";
+import styles from "@/styles/common.module.css";
+import { HomeOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button, Typography } from "antd";
+import { z } from "zod";
 
 const { Text, Title, Link } = Typography;
 
 const registerFormResolver = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().min(1, "Email is required"),
-  password: z.string().min(1, "Password is required"),
+  name: z.string({ required_error: "Name is required" }),
+  email: z
+    .string({ required_error: "Email is required" })
+    .email({ message: "Invalid email address" }),
+  address: z.string({ required_error: "Address is required" }),
+  password: z.string({ required_error: "Password is required" }),
 });
 
+export type TRegisterFields = z.infer<typeof registerFormResolver>;
+
 const RegisterPage = () => {
-  const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+  const onFinish = async (data: TRegisterFields) => {
+    const res = await register(data);
   };
 
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
+      <div className={styles.formContainer}>
         <div className={styles.header}>
-          <Title className={styles.title}>Sign up</Title>
+          <Title className={styles.title}>Sign Up</Title>
           <Text className={styles.text}>Join us! Create an account to get started.</Text>
         </div>
         <CForm onsubmit={onFinish} resolver={zodResolver(registerFormResolver)}>
@@ -48,21 +53,30 @@ const RegisterPage = () => {
             placeholder='Email'
           />
           <CInput
+            prefix={<HomeOutlined />}
+            type='text'
+            name='address'
+            label='Address'
+            id='address'
+            placeholder='Address'
+          />
+          <CInput
             prefix={<LockOutlined />}
             name='password'
             label='Password'
             type='password'
             id='password'
+            placeholder='Password'
           />
-          <Form.Item style={{ marginBottom: "0px" }}>
+          <>
             <Button block type='primary' htmlType='submit'>
               Sign up
             </Button>
-            <div className={styles.signup}>
+            <div className={styles.footer}>
               <Text className={styles.text}>Already have an account?</Text>{" "}
               <Link href='/login'>Sign in</Link>
             </div>
-          </Form.Item>
+          </>
         </CForm>
       </div>
     </section>

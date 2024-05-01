@@ -8,17 +8,22 @@ type TInputProps = {
   type: string;
   id: string;
   prefix?: JSX.Element | string;
+  suffix?: JSX.Element | string;
 };
 
-const CInput = ({ placeholder, name, label, type, id, prefix }: TInputProps) => {
+const CInput = ({ placeholder, name, label, type, id, prefix, suffix }: TInputProps) => {
   return (
     <Controller
       name={name}
       render={({ field, fieldState: { error } }) => (
-        <Form.Item label={label} className='w-full'>
-          <Input {...field} placeholder={placeholder} type={type} id={id} className='w-full' />
+        <Form.Item label={label} className='w-full !mb-4'>
+          {type === "password" ? (
+            <Input.Password {...field} placeholder={placeholder} prefix={prefix} suffix={suffix} />
+          ) : (
+            <Input {...field} placeholder={placeholder} prefix={prefix} suffix={suffix} />
+          )}
           {error && (
-            <p style={{ color: "red", marginTop: "5px" }}>
+            <p style={{ color: "red", marginTop: "5px", display: "flex", alignItems: "center" }}>
               <svg
                 width='17'
                 height='15'
