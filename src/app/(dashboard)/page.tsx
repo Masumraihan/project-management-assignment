@@ -3,7 +3,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className='w-full h-full border border-blue-800 flex items-center justify-center'>
+    <div className='w-full min-h-[calc(100vh-52px)] overflow-hidden overflow-x-auto'>
       main content
     </div>
   );
