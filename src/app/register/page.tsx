@@ -7,6 +7,8 @@ import styles from "@/styles/common.module.css";
 import { HomeOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Typography } from "antd";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const { Text, Title, Link } = Typography;
@@ -23,8 +25,13 @@ const registerFormResolver = z.object({
 export type TRegisterFields = z.infer<typeof registerFormResolver>;
 
 const RegisterPage = () => {
+  const router = useRouter();
   const onFinish = async (data: TRegisterFields) => {
     const res = await register(data);
+    if (res?.success) {
+      toast.success(res.message);
+      router.push("/login");
+    }
   };
 
   return (

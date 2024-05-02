@@ -6,6 +6,8 @@ import styles from "@/styles/common.module.css";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Checkbox, Form, Typography } from "antd";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const { Text, Title, Link } = Typography;
@@ -20,8 +22,13 @@ const loginFormResolver = z.object({
 export type TLoginFields = z.infer<typeof loginFormResolver>;
 
 const LoginPage = () => {
+  const router = useRouter();
   const onSubmit = async (data: TLoginFields) => {
     const res = await login(data);
+    if (res?.success) {
+      toast.success(res.message);
+      router.push("/");
+    }
   };
 
   return (

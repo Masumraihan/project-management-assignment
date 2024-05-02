@@ -18,7 +18,7 @@ const MobileMenuSidebar = () => {
   return (
     <>
       <MenuOutlined size={20} onClick={showDrawer} />
-      <Drawer width={300} title='Basic Drawer' onClose={onClose} open={open}>
+      <Drawer width={300} title='Project Management' onClose={onClose} open={open}>
         <Sidebar />
       </Drawer>
     </>

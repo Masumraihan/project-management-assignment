@@ -4,7 +4,6 @@ import { TLoginFields } from "@/app/login/page";
 
 export const login = async ({ email, password }: TLoginFields) => {
   try {
-    console.log("Logging in user:", { email, password });
     return {
       success: true,
       message: "User logged in successfully",

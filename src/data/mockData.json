@@ -3,27 +3,32 @@
     {
       "id": "1",
       "name": "Website Redesign",
-      "description": "A complete overhaul of our main website to improve user experience and SEO."
+      "description": "A complete overhaul of our main website to improve user experience and SEO.",
+      "teamMembers": ["201", "203", "204"]
     },
     {
       "id": "2",
       "name": "New Product Launch",
-      "description": "Launch campaign for a new product, including marketing, logistics, and sales strategies."
+      "description": "Launch campaign for a new product, including marketing, logistics, and sales strategies.",
+      "teamMembers": ["204", "205"]
     },
     {
       "id": "3",
       "name": "Mobile App Development",
-      "description": "Develop a mobile application for iOS and Android platforms to extend our services."
+      "description": "Develop a mobile application for iOS and Android platforms to extend our services.",
+      "teamMembers": ["206"]
     },
     {
       "id": "4",
       "name": "Customer Relationship Management (CRM) System Integration",
-      "description": "Integrate a CRM system to streamline customer interactions and improve customer service."
+      "description": "Integrate a CRM system to streamline customer interactions and improve customer service.",
+      "teamMembers": ["207"]
     },
     {
       "id": "5",
       "name": "E-commerce Website Enhancement",
-      "description": "Enhance the existing e-commerce website to improve user experience and increase sales."
+      "description": "Enhance the existing e-commerce website to improve user experience and increase sales.",
+      "teamMembers": ["208"]
     }
   ],
   "teamMembers": [
