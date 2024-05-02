@@ -27,7 +27,7 @@ const LoginPage = () => {
     const res = await login(data);
     if (res?.success) {
       toast.success(res.message);
-      router.push("/");
+      router.push("/?login=true");
     }
   };
 
