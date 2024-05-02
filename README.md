@@ -54,6 +54,10 @@ Open the browser and navigate to http://localhost:3000
 10. UUID
 11. Typescript
 
+
+## Live Link
+
+[vercel link](https://project-managemet-dashboard.vercel.app/)
 ## Author
 
 Md Masum Raihan
