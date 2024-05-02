@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 type TTaskCardStore = {
-  draggingCard: number | null;
-  setDraggingCard: (projectId: number | null) => void;
+  draggingCard: string | null;
+  setDraggingCard: (projectId: string | null) => void;
 };
 
-export const useTaskCardStores = create<TTaskCardStore>((set) => ({
+export const useTaskCardStore = create<TTaskCardStore>((set) => ({
   draggingCard: null,
-  setDraggingCard: (projectId: number | null) => set({ draggingCard: projectId }),
+  setDraggingCard: (projectId: string | null) => set({ draggingCard: projectId }),
 }));

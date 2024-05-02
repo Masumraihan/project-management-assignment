@@ -5,6 +5,8 @@ import { devtools, persist } from "zustand/middleware";
 type TTaskStore = {
   tasks: TTask[];
   addTasks: (tasks: TTask) => void;
+  removeTask: (taskId: string) => void;
+  updateTask: (task: TTask) => void;
 };
 
 export const useTaskStore = create<TTaskStore>()(
