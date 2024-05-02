@@ -10,12 +10,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <Col xs={0} md={6} lg={4} className='sidebar'>
           <Sidebar />
         </Col>
-        <Col
-          xs={24}
-          md={18}
-          lg={20}
-          style={{ height: "100vh", overflow: "auto" }}
-        >
+        <Col xs={24} md={0}></Col>
+        <Col xs={24} md={18} lg={20} style={{ height: "100vh", overflow: "auto" }}>
           <Header />
           {children}
         </Col>

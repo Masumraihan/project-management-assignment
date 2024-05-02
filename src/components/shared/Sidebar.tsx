@@ -7,7 +7,7 @@ import Link from "next/link";
 type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
-  { key: "1", icon: <AppstoreOutlined />, label: <Link href={"/"}>Project</Link> },
+  { key: "1", icon: <AppstoreOutlined />, label: <Link href={"/"}>Tasks</Link> },
 ];
 
 const Sidebar = () => {

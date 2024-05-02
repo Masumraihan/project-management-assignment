@@ -1,6 +1,6 @@
 import { Button, Flex } from "antd";
-import Title from "antd/es/typography/Title";
 import Link from "next/link";
+import MobileMenuSidebar from "./MobileMenuSidebar";
 
 const Header = () => {
   return (
@@ -9,9 +9,10 @@ const Header = () => {
       justify='space-between'
       style={{ padding: "10px", width: "100%", backgroundColor: "white" }}
     >
-      <Title level={3} style={{ backgroundColor: "white", marginBottom: 0 }}>
-        Project Management Dashboard
-      </Title>
+      <div className='sm:hidden'>
+        <MobileMenuSidebar />
+      </div>
+      <h1 className='hidden sm:block sm:text-2xl font-bold'>Project Management Dashboard</h1>
       <Button type='primary'>
         <Link href={"/login"}>Login</Link>
       </Button>
