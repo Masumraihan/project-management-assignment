@@ -24,6 +24,7 @@ const CForm = ({ children, onsubmit, defaultValues, resolver }: TCFormProps) => 
 
   const submit: SubmitHandler<FieldValues> = (data) => {
     onsubmit(data);
+    methods.reset();
   };
 
   const methods = useForm(formConfig);

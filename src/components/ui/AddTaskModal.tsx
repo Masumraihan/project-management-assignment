@@ -60,7 +60,7 @@ const AddTaskModal = ({ isShowModal, setIsModalOpen }: TAddTaskModalProps) => {
         value: project.id,
       };
     });
-    membersOptions = data.teamMembers.map((member: TTeamMember) => {
+    membersOptions = data?.teamMembers?.map((member: TTeamMember) => {
       return {
         label: member.name,
         value: member.id,
@@ -84,6 +84,7 @@ const AddTaskModal = ({ isShowModal, setIsModalOpen }: TAddTaskModalProps) => {
     };
     addTask(taskData);
     alert("Task added successfully");
+    setIsModalOpen(false);
   };
 
   return (
