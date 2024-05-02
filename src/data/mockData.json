@@ -1,47 +1,56 @@
-[
-  {
-    "id": 1,
-    "status": "DONE",
-    "title": "Project initiation and planning",
-    "description": "Project initiation and planning",
-    "assigned": 3,
-    "deadline": "2022-09-30T00:00:00.000Z",
-    "priority": "HIGH"
-  },
-  {
-    "id": 2,
-    "status": "TODO",
-    "title": "Design",
-    "description": "Design the project",
-    "assigned": 2,
-    "deadline": "2022-09-30T00:00:00.000Z",
-    "priority": "LOW"
-  },
-  {
-    "id": 3,
-    "status": "IN_PROGRESS",
-    "title": "Code",
-    "description": "Implement the design through code",
-    "assigned": 1,
-    "deadline": "2022-09-30T00:00:00.000Z",
-    "priority": "MEDIUM"
-  },
-  {
-    "id": 4,
-    "status": "IN_PROGRESS",
-    "title": "Test",
-    "description": "Test the project",
-    "assigned": 1,
-    "deadline": "2022-09-30T00:00:00.000Z",
-    "priority": "LOW"
-  },
-  {
-    "id": 5,
-    "status": "IN_PROGRESS",
-    "title": "Deploy",
-    "description": "Deploy the project",
-    "assigned": 1,
-    "deadline": "2022-09-30T00:00:00.000Z",
-    "priority": "LOW"
-  }
-]
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Website Redesign",
+      "description": "A complete overhaul of our main website to improve user experience and SEO."
+    },
+    {
+      "id": "2",
+      "name": "New Product Launch",
+      "description": "Launch campaign for a new product, including marketing, logistics, and sales strategies."
+    },
+    {
+      "id": "3",
+      "name": "Mobile App Development",
+      "description": "Develop a mobile application for iOS and Android platforms to extend our services."
+    },
+    {
+      "id": "4",
+      "name": "Customer Relationship Management (CRM) System Integration",
+      "description": "Integrate a CRM system to streamline customer interactions and improve customer service."
+    },
+    {
+      "id": "5",
+      "name": "E-commerce Website Enhancement",
+      "description": "Enhance the existing e-commerce website to improve user experience and increase sales."
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "201",
+      "name": "Alice Johnson",
+      "role": "Graphic Designer"
+    },
+    {
+      "id": "202",
+      "name": "Bob Smith",
+      "role": "Frontend Developer"
+    },
+    {
+      "id": "203",
+      "name": "Charlie Davis",
+      "role": "Content Strategist"
+    },
+    {
+      "id": "204",
+      "name": "Diana Evans",
+      "role": "Market Analyst"
+    },
+    {
+      "id": "205",
+      "name": "Evan Wallace",
+      "role": "Logistics Manager"
+    }
+  ]
+}

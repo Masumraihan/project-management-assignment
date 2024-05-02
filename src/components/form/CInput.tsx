@@ -9,18 +9,33 @@ type TInputProps = {
   id: string;
   prefix?: JSX.Element | string;
   suffix?: JSX.Element | string;
+  disabled?: boolean;
 };
 
-const CInput = ({ placeholder, name, label, type, id, prefix, suffix }: TInputProps) => {
+const CInput = ({ placeholder, name, label, type, id, prefix, suffix, disabled }: TInputProps) => {
   return (
     <Controller
       name={name}
       render={({ field, fieldState: { error } }) => (
         <Form.Item label={label} className='w-full !mb-4'>
           {type === "password" ? (
-            <Input.Password {...field} placeholder={placeholder} prefix={prefix} suffix={suffix} />
+            <Input.Password
+              {...field}
+              placeholder={placeholder}
+              prefix={prefix}
+              suffix={suffix}
+              id={id}
+              disabled={disabled}
+            />
           ) : (
-            <Input {...field} placeholder={placeholder} prefix={prefix} suffix={suffix} />
+            <Input
+              {...field}
+              placeholder={placeholder}
+              prefix={prefix}
+              suffix={suffix}
+              id={id}
+              disabled={disabled}
+            />
           )}
           {error && (
             <p style={{ color: "red", marginTop: "5px", display: "flex", alignItems: "center" }}>

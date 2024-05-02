@@ -1,44 +1,24 @@
-import { Form, Select } from "antd";
+import { Form, Input } from "antd";
+import TextArea from "antd/es/input/TextArea";
 import { Controller } from "react-hook-form";
 
-type TOption = {
-  value: string;
-  label: string;
-};
-type TSelectProps = {
-  options: TOption[];
+type TInputProps = {
+  placeholder?: string;
   name: string;
   label?: string;
-  placeholder?: string;
-  disabled?: boolean;
-  mode?: "multiple" | "tags" | undefined;
-  allowClear?: boolean;
+  id: string;
 };
 
-const CSelect = ({
-  options,
-  name,
-  label,
-  placeholder,
-  disabled,
-  mode,
-  allowClear,
-}: TSelectProps) => {
+const CTextArea = ({ placeholder, name, label, id }: TInputProps) => {
   return (
     <Controller
       name={name}
       render={({ field, fieldState: { error } }) => (
-        <Form.Item label={label}>
-          <Select
-            {...field}
-            placeholder={placeholder}
-            options={options}
-            disabled={disabled}
-            mode={mode}
-            allowClear={allowClear}
-          />
+        <Form.Item label={label} className='w-full !mb-4'>
+          <TextArea {...field} placeholder={placeholder} id={id} />
+
           {error && (
-            <p style={{ color: "#FF0000", marginTop: "5px" }}>
+            <p style={{ color: "red", marginTop: "5px", display: "flex", alignItems: "center" }}>
               <svg
                 width='17'
                 height='15'
@@ -52,7 +32,7 @@ const CSelect = ({
                   fill='#FF0000'
                 />
               </svg>
-              {error.message}{" "}
+              {error.message}
             </p>
           )}
         </Form.Item>
@@ -61,4 +41,4 @@ const CSelect = ({
   );
 };
 
-export default CSelect;
+export default CTextArea;
