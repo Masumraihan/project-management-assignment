@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "status": "DONE",
+    "title": "Project initiation and planning",
+    "description": "Project initiation and planning",
+    "assigned": 3,
+    "deadline": "2022-09-30T00:00:00.000Z",
+    "priority": "HIGH"
+  },
+  {
+    "id": 2,
+    "status": "TODO",
+    "title": "Design",
+    "description": "Design the project",
+    "assigned": 2,
+    "deadline": "2022-09-30T00:00:00.000Z",
+    "priority": "LOW"
+  },
+  {
+    "id": 3,
+    "status": "IN_PROGRESS",
+    "title": "Code",
+    "description": "Implement the design through code",
+    "assigned": 1,
+    "deadline": "2022-09-30T00:00:00.000Z",
+    "priority": "MEDIUM"
+  },
+  {
+    "id": 4,
+    "status": "IN_PROGRESS",
+    "title": "Test",
+    "description": "Test the project",
+    "assigned": 1,
+    "deadline": "2022-09-30T00:00:00.000Z",
+    "priority": "LOW"
+  },
+  {
+    "id": 5,
+    "status": "IN_PROGRESS",
+    "title": "Deploy",
+    "description": "Deploy the project",
+    "assigned": 1,
+    "deadline": "2022-09-30T00:00:00.000Z",
+    "priority": "LOW"
+  }
+]

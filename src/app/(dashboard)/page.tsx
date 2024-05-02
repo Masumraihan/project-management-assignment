@@ -1,10 +1,9 @@
-import Sidebar from "@/components/shared/Sidebar";
-import React from "react";
+import AllProjects from "@/components/ui/AllProjects";
 
 const Dashboard = () => {
   return (
     <div className='w-full min-h-[calc(100vh-52px)] overflow-hidden overflow-x-auto'>
-      main content
+      <AllProjects />
     </div>
   );
 };
